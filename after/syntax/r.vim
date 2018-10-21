@@ -6,9 +6,18 @@ endif
 " remove the keywords. we'll re-add them below
 syntax clear ROperator
 
-syntax match ROperator "\<is\>"
 
-syntax match RNiceOperator "\<in\>" conceal cchar=∈
+syntax keyword RNiceOperator in conceal cchar=∈
+syntax match RNiceOperator "%in%" conceal cchar=∈
+syntax match RNiceOperator "<-" conceal cchar=←
+syntax match RNiceOperator "->" conceal cchar=→
+syntax keyword RNiceOperator ifelse conceal cchar=⁈
+syntax match RNiceOperator "else if" conceal cchar=⁉
+syntax keyword RNiceOperator c conceal cchar=𝕔
+syntax keyword RNiceOperator vector conceal cchar=𝕍
+syntax keyword RNiceOperator identical conceal cchar=≣
+
+
 syntax match RNiceOperator "\<or\>" conceal cchar=∨
 syntax match RNiceOperator "\<and\>" conceal cchar=∧
 " include the space after “not” – if present – so that “not a” becomes “¬a”.
@@ -59,10 +68,9 @@ syntax keyword RNiceOperator from conceal cchar=⊂
 syntax keyword RNiceOperator for conceal cchar=∀
 syntax keyword RNiceOperator if conceal cchar=⁇
 syntax keyword RNiceOperator else conceal cchar=‼
-syntax keyword RNiceOperator elif conceal cchar=⁉
-syntax keyword RNiceOperator def conceal cchar=ƒ
+syntax keyword RNiceOperator function conceal cchar=ƒ
 syntax keyword RNiceOperator product conceal cchar=∏
-syntax keyword RNiceOperator len conceal cchar=⍴
+syntax keyword RNiceOperator length conceal cchar=⍴
 syntax keyword RNiceOperator shape conceal cchar=⍴
 syntax keyword RNiceOperator reshape conceal cchar=⍴
 " syntax keyword RNiceOperator range conceal cchar=𝕣
@@ -80,7 +88,7 @@ syntax keyword RNiceOperator list conceal cchar=𝕃
 syntax keyword RNiceOperator iter conceal cchar=𝕚
 syntax keyword RNiceOperator complex conceal cchar=ℂ
 syntax keyword RNiceOperator return conceal cchar=⇦
-syntax keyword RNiceOperator import conceal cchar=⇲
+syntax keyword RNiceOperator library conceal cchar=⇲
 syntax keyword RNiceOperator print conceal cchar=⎙
 syntax keyword RNiceOperator abs conceal cchar=|
 "enumerating is applying an index i to every ¨ element
